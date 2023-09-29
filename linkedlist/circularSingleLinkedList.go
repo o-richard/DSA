@@ -6,7 +6,7 @@ import (
 )
 
 // cSllNode refers to a circularSingleLinkedListNode
-// cSLL refers to Ciircular Single Linked List
+// cSLL refers to Circular Single Linked List
 
 type cSllNode struct {
 	data int
@@ -64,9 +64,8 @@ func (c *cSLL) insertion(inputData int, insertionIndex int) error {
 		c.head = &newNode
 		if c.tail == nil {
 			c.tail = c.head
-		} else {
-			c.tail.next = c.head
 		}
+		c.tail.next = c.head
 	} else {
 		for tmp, currIndex := c.head, 0; ; tmp, currIndex = tmp.next, currIndex + 1 {
 			if currIndex == insertionIndex - 1 {
