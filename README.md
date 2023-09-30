@@ -10,7 +10,7 @@ There is no structured learning path to use; once to wish to tackle a package - 
 ### Recommedations
 ~~Develop a personal guide to use~~ Strictly stick to a personal guide you'll choose (Objetives vary, timelines to accomplish stuff vary, personalities differ).
 
-~~Just rely on this repository~~ Advance your knowledge elsewhere and expand your viewpoints. There are platfroms that provide challenges to tackle.
+~~Just rely on this repository~~ Advance your knowledge elsewhere and expand your viewpoints. There are platforms that provide challenges to tackle.
 
 
 ## Programming Language
@@ -51,3 +51,4 @@ This work should be a learning path for one to practise implementations of vario
 
 ## Credits
 - [https://www.programiz.com/](https://www.programiz.com/)
+- [https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)

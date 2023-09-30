@@ -35,9 +35,7 @@ func maxHeapify(arr []int, size, largestIndex int) {
 	}
 
 	if largest != largestIndex {
-		tmp := arr[largestIndex]
-		arr[largestIndex] = arr[largest]
-		arr[largest] = tmp
+		arr[largestIndex], arr[largest] = arr[largest], arr[largestIndex]
 		maxHeapify(arr, size, largest)
 	}
 }
@@ -56,9 +54,7 @@ func minHeapify(arr []int, size, smallestIndex int) {
 	}
 
 	if smallest != smallestIndex {
-		tmp := arr[smallestIndex]
-		arr[smallestIndex] = arr[smallest]
-		arr[smallest] = tmp
+		arr[smallestIndex], arr[smallest] = arr[smallest], arr[smallestIndex]
 		minHeapify(arr, size, smallest)
 	}
 	
