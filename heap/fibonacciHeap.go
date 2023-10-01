@@ -267,13 +267,6 @@ func cascadingCut(f *fHeap, parent *fHeapNode) {
 	}
 }
 
-func (f *fHeap) Test(key int) *fHeapNode {
-	if f.rootNode == nil {
-		return nil
-	}
-	return findNode(f.rootNode, key)
-}
-
 func (f *fHeap) ChangeKey(currentData, newData int) (error) {
 	if f.rootNode == nil {
 		return errors.New("the heap is empty")
