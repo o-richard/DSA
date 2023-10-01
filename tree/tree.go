@@ -43,4 +43,4 @@ func IsBalanced(tree treeType) bool {
 	return tree.isBalanced()
 }
 
-// Implement Binary Tree: AVL Tree, B-Tree
+// Implement Binary Tree: AVL Tree, B-Tree, BPlus Tree, Red Black Tree
