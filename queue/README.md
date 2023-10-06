@@ -18,7 +18,7 @@ There are six functions currently exposed:
 
 1. InitCircularQueue(size)
 > Creates a circular queue based on a particular size supplied by a user.
-> The data type of the circular queue is not restricted.
+> The data type of the items of the circular queue is not restricted.
 > It returns the newly created circular queue and an error (used to check if initialization is successful).
 
 2. Enqueue(item)
@@ -38,10 +38,12 @@ There are six functions currently exposed:
 
 5. IsEmpty()
 > It specifies whether the circular queue contains any item.
+> It returns a boolean value (true or false)
 > It is a method of the initialized circular queue.
 
 6. IsFull()
 > It specifies whether the circular queue is full based on the size specified by the user during initialization.
+> It returns a boolean value (true or false)
 > It is a method of the initialized circular queue.
 
 ### Priority Queue
@@ -86,7 +88,7 @@ There are 7 operations exposed
 
 1. InitDoubleEndedQueue(size)
 > Creates the double ended queue wuth the size specified by the user.
-> The data type of the double ended queue is not restrictive.
+> The data type of the items of the double ended queue is not restrictive.
 > It returns the double ended queue and an error (used to check if initialization is successful)
 
 2. AddAtFront(item)
@@ -223,19 +225,21 @@ if myQueue.IsEmpty() {
 
 # Applications
 ### Circular Queue
-1. CPU scheduling
-2. Memory management
-3. Traffic Management
+1. CPU scheduling. It can be used to implement round-robin scheduling algorithms for CPU time allocation.
+2. Memory management. It can be used in managing a buffer of fixed size, like in streaming media applications to store and process a continuous stream of data.
+3. Traffic management for example printer queue.
 
 ### Priority Queue
-1. Dijkstra's algorithm
-2. For implementing stack
-3. For load balancing and interrupt handling in an operating system
-4. For data compression in Huffman code
+1. Dijkstra's algorithm. Nodes with the lowest cost are explored first.
+2. Data compression in Huffman code. Characters with higher frequencies have higher priorities.
+3. For implementing stack.
+4. For load balancing and interrupt handling in an operating system.
+5. Job scheduling.
 
 ### Double Ended Queue
 1. In undo operations on software.
 2. To store history in browsers.
-3. For implementing both stacks and queues.
+3. Implementing both stacks and queues.
+4. Palindrome checking. It can be used in checking whether a given string is a palindrome by using a deque to compare characters from both ends.
 
 # Tests

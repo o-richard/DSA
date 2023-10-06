@@ -52,17 +52,9 @@ func (s *stack) Peek() interface{} {
 }
 
 func (s *stack) IsEmpty() bool {
-	if s.top == -1 {
-		return true
-	}
-
-	return false
+	return s.top == -1
 }
 
 func (s *stack) IsFull() bool {
-	if s.top == s.maxIndices {
-		return true
-	}
-
-	return false
+	return s.top == s.maxIndices
 }

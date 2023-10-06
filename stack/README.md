@@ -1,6 +1,6 @@
 # Stack Explanation
 
-Visualize a stack as a collection of plates on top of each other in such a way that the last plate to be inserted is the first plate to be retrieved (LIFO).
+Visualize a stack as a pile of plates on top of each other in such a way that the last plate to be inserted is the first plate to be retrieved (LIFO).
 
 # Stack Implementation
 
@@ -8,7 +8,7 @@ There are five funcions publicly exposed:
 
 1. Init(size)
 > Creates a stack based on a particular size supplied by a user.
-> The data type of the stack is not restricted.
+> The data type of the items on the stack is not restricted.
 > It returns the newly created stack and an error (used to check if initialization is successful).
 
 2. Push(item)
@@ -28,10 +28,12 @@ There are five funcions publicly exposed:
 
 5. IsEmpty()
 > It specifies whether the stack contains items or not.
+> It returns a boolean value.
 > It is a method of the initialized stack.
 
 6. IsFull()
 > It specifies whether the stack is full based on the size used during initialization or not.
+> It returns a boolean value.
 > It is a method of the initialized stack.
 
 # Example
@@ -53,9 +55,9 @@ if err != nil {
     // There is a problem during pushing
 }
 
-val := myStack.Peek()
+val := myStack.Peek() // Retuns 6
 
-val = myStack.pop()
+val = myStack.pop() // Retuns 6
 
 if myStack.IsFull() {
     // The stack is full
@@ -68,8 +70,14 @@ if myStack.IsEmpty() {
 
 # Applications
 
-1. To reverse a word.
-2. To calculate the value of expressions like 2 + 4 / 5 * (7 - 9) by converting the expression to prefix or postfix form.
-3. In browsers - The back button in a browser saves all the URLs you have visited previously in a stack.
+1. Reverse a word.
+2. Function call management in programming  languages.
+3. Undo functionality.
+4. Backtracking algorithms such as Depth First Search.
+5. Expression evaluation; converting the value of expressions like 2 + 4 / 5 * (7 - 9) to prefix or postfix form from infix form.
+6. Browser history enabling users to navigate back through their browsing history.
+7. Memory management keeping track of execution of programs and the allocation of local variables.
+8. Task scheduling in operating Systems; it helps in execution of processes and managing their state information.
+9. Recursion
 
 # Tests
