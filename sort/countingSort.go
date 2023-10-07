@@ -2,7 +2,7 @@ package sort
 
 import "errors"
 
-func CountingSort(nums []int, _ bool) ([]int, error) {
+func CountingSort(nums []int) ([]int, error) {
 	itemCount := len(nums)
 	
 	var maxElem int
@@ -28,9 +28,8 @@ func CountingSort(nums []int, _ bool) ([]int, error) {
 	
 	outputArr := make([]int, itemCount)
 	for _, num := range nums {
-		index := countArr[num] - 1
 		countArr[num]--
-		outputArr[index] = num
+		outputArr[countArr[num]] = num
 	}
 
 	return outputArr, nil
