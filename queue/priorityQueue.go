@@ -30,7 +30,7 @@ func maxHeapify(arr []int, size, largestIndex int) {
 		largest = left
 	}
 
-	if right < size && arr[largestIndex] < arr[right] {
+	if right < size && arr[largest] < arr[right] {
 		largest = right
 	}
 
@@ -49,7 +49,7 @@ func minHeapify(arr []int, size, smallestIndex int) {
 		smallest = left
 	}
 
-	if right < size && arr[smallestIndex] > arr[right] {
+	if right < size && arr[smallest] > arr[right] {
 		smallest = right
 	}
 

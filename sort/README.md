@@ -54,3 +54,31 @@ Average	O(n+k)
 Space Complexity	O(max)
 Stability	Yes
 
+Heap Sort Complexity
+Time Complexity	 
+Best	O(nlog n)
+Worst	O(nlog n)
+Average	O(nlog n)
+Space Complexity	O(1)
+Stability	No
+
+Shell Sort Complexity
+Time Complexity	 
+Best	O(nlog n)
+Worst	O(n2)
+Average	O(nlog n)
+Space Complexity	O(1)
+Stability	No
+
+# Unimplemented 
+Bucket Sorts - Scatter and gather
+
+Binary Search Complexity
+Time Complexities
+
+Best case complexity: O(1)
+Average case complexity: O(log n)
+Worst case complexity: O(log n)
+Space Complexity
+
+The space complexity of the binary search is O(1).
