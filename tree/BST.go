@@ -67,28 +67,28 @@ func (b *bst) search(searchData int) bool {
 	}
 }
 
-func preorder(n *bstNode, nums []int) []int {
+func (n *bstNode) preOrder(nums []int) []int {
 	if n != nil {
 		nums = append(nums, n.data)
-		nums = preorder(n.left, nums)
-		nums = preorder(n.right, nums)
+		nums = n.left.preOrder(nums)
+		nums = n.right.preOrder(nums)
 	}
 	return nums
 }
 
-func inorder(n *bstNode, nums []int) []int {
+func (n *bstNode) inOrder(nums []int) []int {
 	if n != nil {
-		nums = inorder(n.left, nums)
+		nums = n.left.inOrder(nums)
 		nums = append(nums, n.data)
-		nums = inorder(n.right, nums)
+		nums = n.right.inOrder(nums)
 	}
 	return nums
 }
 
-func postorder(n *bstNode, nums []int) []int {
+func (n *bstNode) postOrder(nums []int) []int {
 	if n != nil {
-		nums = postorder(n.left, nums)
-		nums = postorder(n.right, nums)
+		nums = n.left.postOrder(nums)
+		nums = n.right.postOrder(nums)
 		nums = append(nums, n.data)
 	}
 	return nums
@@ -100,13 +100,13 @@ func (b *bst) tranverse(tranverseType string) ([]int, error) {
 
 	switch tranverseType {
 		case "preorder":
-			nums = preorder(b.root, nums)
+			nums = b.root.preOrder(nums)
 			err = nil
 		case "inorder":
-			nums = inorder(b.root, nums)
+			nums = b.root.inOrder(nums)
 			err = nil
 		case "postorder":
-			nums = postorder(b.root, nums)
+			nums = b.root.postOrder(nums)
 			err = nil
 		default:
 			err = errors.New("unsupported tranverse type: options are preorder, postorder, inorder")	
@@ -246,11 +246,7 @@ func (n *bstNode) isBalancedSubTree(height *int) bool {
 	l := n.left.isBalancedSubTree(&leftHeight)
 	r := n.right.isBalancedSubTree(&rightHeght)
 
-	if leftHeight > rightHeght {
-		*height = leftHeight + 1
-	} else {
-		*height = rightHeght + 1
-	}
+	*height = 1 + max(leftHeight, rightHeght)
 
 	if math.Abs(float64(leftHeight - rightHeght)) <= 1 {
 		return l && r
