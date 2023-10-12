@@ -18,7 +18,7 @@ There is no structured learning path to use; once to wish to tackle a package - 
 I find Go to be elegant (coming from the world of C, Python and Javascript).
 
 ### Recommendations
-Implement data structures and algorithms in the C programming language if possible. (Gotta love the segfaults first 😂).
+Implement data structures and algorithms in the C programming language if possible. (Gotta love the segfaults first and dealing with raw memory with no leaks😂).
 
 ## Unimplemented Concepts
 
