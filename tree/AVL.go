@@ -63,13 +63,13 @@ func (n *avlNode) insertNode(inputData int) *avlNode {
 		if n.left == nil {
 			n.left = &avlNode{data: inputData, height: 1}
 		} else {
-			n.left.insertNode(inputData)
+			n.left = n.left.insertNode(inputData)
 		}
 	} else {
 		if n.right == nil {
 			n.right = &avlNode{data: inputData, height: 1}
 		} else {
-			n.right.insertNode(inputData)
+			n.right = n.right.insertNode(inputData)
 		}
 	}
 
@@ -189,23 +189,13 @@ func (n *avlNode) deleteNode(data int) (*avlNode, bool) {
 		if n.left == nil && n.right == nil {
 			n = nil
 		} else if n.left != nil && n.right != nil {
-			var tmp, parentTmp *avlNode
-			for tmp, parentTmp = n, n.right; tmp.left != nil; parentTmp, tmp = tmp, tmp.left {
+			var tmp *avlNode
+			for tmp = n.right; tmp.left != nil; tmp = tmp.left {
 			}
-			// Perform swap operation with the leftmost node of the current right node
+			// Perform swap operation with the leftmost node of the current right node (in order successor)
 			n.data, tmp.data = tmp.data, n.data
-			// Perform deletion: 
-			// Scenario 1: The original leftmost node of the current right node has a right child
-			// Scenario 2: The original leftmost node of the current right node has no right child
-			// Scenario 3: The node for deletion only has a right child with no children
-			if tmp.right != nil {
-				parentTmp.left = tmp.right
-			} else {
-				parentTmp.left = nil
-			}
-			if parentTmp.right == tmp {
-				parentTmp.right = nil
-			}
+			
+			n.right, isPresent = n.right.deleteNode(tmp.data)
 		} else {
 			if n.left != nil {
 				n = n.left
@@ -213,6 +203,10 @@ func (n *avlNode) deleteNode(data int) (*avlNode, bool) {
 				n = n.right
 			}
 		}
+	}
+
+	if n == nil {
+		return n, isPresent
 	}
 
 	n.height = 1 + max(n.left.obtainHeight(), n.right.obtainHeight())

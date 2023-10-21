@@ -26,6 +26,7 @@ func main() {
 	fmt.Println(tree.Tranverse(&mytree, "test"))
 	fmt.Println(tree.Delete(&mytree, 2))
 	fmt.Println(tree.IsBalanced(&mytree))
-	// sorting an empty array, negative numbers,
-	fmt.Println("Hello World")
+	fmt.Println(tree.IsComplete(&mytree))
+	fmt.Println(tree.IsFull(&mytree))
+	fmt.Println(tree.IsPerfect(&mytree))
 }
