@@ -1,6 +1,6 @@
 package dfs
 
-import "golang.org/x/exp/slices"
+import "slices"
 
 func dfsAlgo(graph map[string][]string, start string, visited []string) []string{
 	visited = append(visited, start)

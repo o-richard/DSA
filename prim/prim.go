@@ -1,6 +1,6 @@
 package prim
 
-import "golang.org/x/exp/slices"
+import "slices"
 
 type edge struct {
 	source, destination string

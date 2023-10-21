@@ -1,6 +1,6 @@
 package bfs
 
-import "golang.org/x/exp/slices"
+import "slices"
 
 func BFS(graph map[string][]string, start string) []string {
 	queue := []string{start}

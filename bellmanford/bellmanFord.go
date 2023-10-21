@@ -3,8 +3,7 @@ package bellmanford
 import (
 	"errors"
 	"math"
-
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 type edge struct {

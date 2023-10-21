@@ -2,8 +2,7 @@ package dijkstra
 
 import (
 	"math"
-
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 type node struct {
@@ -13,7 +12,7 @@ type node struct {
 
 type minHeap struct {
 	itemCount int
-	values []node
+	values    []node
 }
 
 func initMinHeap() minHeap {
@@ -22,8 +21,8 @@ func initMinHeap() minHeap {
 
 func minHeapify(arr []node, size, smallestIndex int) {
 	smallest := smallestIndex
-	left := 2 * smallestIndex + 1
-	right := 2 * smallestIndex + 2
+	left := 2*smallestIndex + 1
+	right := 2*smallestIndex + 2
 
 	if left < size && arr[smallestIndex].data > arr[left].data {
 		smallest = left
@@ -37,13 +36,13 @@ func minHeapify(arr []node, size, smallestIndex int) {
 		arr[smallestIndex], arr[smallest] = arr[smallest], arr[smallestIndex]
 		minHeapify(arr, size, smallest)
 	}
-	
+
 }
 
 func (h *minHeap) insert(data int, name string) {
 	h.values = append(h.values, node{data: data, name: name})
 	h.itemCount++
-	
+
 	for i := (h.itemCount / 2) - 1; i > -1; i-- {
 		minHeapify(h.values, h.itemCount, i)
 	}
@@ -67,7 +66,6 @@ func (h *minHeap) isEmpty() bool {
 	return h.itemCount == 0
 }
 
-
 func Dijkstra(graph map[string]map[string]int, source string) map[string]int {
 	var uniqueVertices []string
 	for key, values := range graph {
@@ -77,7 +75,7 @@ func Dijkstra(graph map[string]map[string]int, source string) map[string]int {
 		for value := range values {
 			if !slices.Contains(uniqueVertices, value) {
 				uniqueVertices = append(uniqueVertices, value)
-			}	
+			}
 		}
 	}
 
@@ -93,7 +91,7 @@ func Dijkstra(graph map[string]map[string]int, source string) map[string]int {
 		minNode := priorityQueue.delete()
 
 		for vertex, weight := range graph[minNode.name] {
-			if distance[vertex] > minNode.data + weight {
+			if distance[vertex] > minNode.data+weight {
 				distance[vertex] = minNode.data + weight
 				priorityQueue.insert(distance[vertex], vertex)
 			}

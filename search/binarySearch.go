@@ -1,6 +1,6 @@
 package search
 
-import "golang.org/x/exp/slices"
+import "slices"
 
 func BinarySearch(nums []int, searchData int) (int, bool) {
 	var isFound bool

@@ -1,7 +1,7 @@
 package kruskal
 
 import (
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 type edge struct {

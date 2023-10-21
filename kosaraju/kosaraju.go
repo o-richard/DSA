@@ -1,7 +1,7 @@
 package kosaraju
 
 import (
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 type graph struct {
