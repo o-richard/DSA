@@ -1,13 +1,14 @@
-package dijkstra
+package prim
 
-import (
-	"math"
+import "golang.org/x/exp/slices"
 
-	"golang.org/x/exp/slices"
-)
+type edge struct {
+	source, destination string
+	weight int
+}
 
 type node struct {
-	name string
+	source, destination string
 	data int
 }
 
@@ -40,8 +41,8 @@ func minHeapify(arr []node, size, smallestIndex int) {
 	
 }
 
-func (h *minHeap) insert(data int, name string) {
-	h.values = append(h.values, node{data: data, name: name})
+func (h *minHeap) insert(data int, source, destination string) {
+	h.values = append(h.values, node{data: data, source: source, destination: destination})
 	h.itemCount++
 	
 	for i := (h.itemCount / 2) - 1; i > -1; i-- {
@@ -67,8 +68,7 @@ func (h *minHeap) isEmpty() bool {
 	return h.itemCount == 0
 }
 
-
-func Dijkstra(graph map[string]map[string]int, source string) map[string]int {
+func Prim(graph map[string]map[string]int) ([]edge, int) {
 	var uniqueVertices []string
 	for key, values := range graph {
 		if !slices.Contains(uniqueVertices, key) {
@@ -81,24 +81,36 @@ func Dijkstra(graph map[string]map[string]int, source string) map[string]int {
 		}
 	}
 
-	distance := make(map[string]int)
-	for _, v := range uniqueVertices {
-		distance[v] = math.MaxInt
+	var minCost int
+	var result []edge
+	
+	if len(uniqueVertices) == 0 {
+		return result, minCost
 	}
-	distance[source] = 0
+
+	visited := make(map[string]bool)
 	priorityQueue := initMinHeap()
-	priorityQueue.insert(0, source)
+	priorityQueue.insert(0, uniqueVertices[0], uniqueVertices[0])
 
 	for !priorityQueue.isEmpty() {
 		minNode := priorityQueue.delete()
 
-		for vertex, weight := range graph[minNode.name] {
-			if distance[vertex] > minNode.data + weight {
-				distance[vertex] = minNode.data + weight
-				priorityQueue.insert(distance[vertex], vertex)
+		if visited[minNode.destination] {
+			continue
+		}
+
+		minCost += minNode.data
+		visited[minNode.destination] = true
+
+		newEdge := edge{source: minNode.source, destination: minNode.destination, weight: minNode.data}
+		result = append(result, newEdge)
+
+		for k, v := range graph[minNode.destination] {
+			if !visited[k] {
+				priorityQueue.insert(v, minNode.destination, k)
 			}
 		}
 	}
 
-	return distance
+	return result[1:], minCost
 }

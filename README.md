@@ -50,5 +50,8 @@ Suggestions:
 This work should be a learning path for one to practise implementations of various data structures and algorithms so that they can use them in their own applications.
 
 ## Credits
-- [https://www.programiz.com/](https://www.programiz.com/)
+- [https://www.scaler.com/topics/data-structures/](https://www.scaler.com/topics/data-structures/)
+- [https://www.programiz.com/dsa](https://www.programiz.com/dsa)
 - [https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial] (https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial)
+- [https://www.geeksforgeeks.org/fundamentals-of-algorithms/](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)zz
