@@ -129,23 +129,12 @@ func (n *bstNode) deleteNode(data int) (*bstNode, bool) {
 		if n.left == nil && n.right == nil {
 			n = nil
 		} else if n.left != nil && n.right != nil {
-			var tmp, parentTmp *bstNode
-			for tmp, parentTmp = n, n.right; tmp.left != nil; parentTmp, tmp = tmp, tmp.left {
+			var tmp *bstNode
+			for tmp = n.right; tmp.left != nil; tmp = tmp.left {
 			}
-			// Perform swap operation with the leftmost node of the current right node
+			// Perform swap operation with the leftmost node of the current right node (in order successor)
 			n.data, tmp.data = tmp.data, n.data
-			// Perform deletion: 
-			// Scenario 1: The original leftmost node of the current right node has a right child
-			// Scenario 2: The original leftmost node of the current right node has no right child
-			// Scenario 3: The node for deletion only has a right child with no children
-			if tmp.right != nil {
-				parentTmp.left = tmp.right
-			} else {
-				parentTmp.left = nil
-			}
-			if parentTmp.right == tmp {
-				parentTmp.right = nil
-			}
+			n.right, isPresent = n.right.deleteNode(tmp.data)
 		} else {
 			if n.left != nil {
 				n = n.left

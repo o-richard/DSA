@@ -19,6 +19,7 @@ func Search(tree treeType, data int) bool {
 	return tree.search(data)
 }
 
+// tranverseType options are preorder, inorder, postorder
 func Tranverse(tree treeType, tranverseType string) ([]int, error) {
 	return tree.tranverse(tranverseType)
 }
