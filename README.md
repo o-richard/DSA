@@ -42,7 +42,7 @@ Contributions are welcome.
 Suggestions:
 - New packages should be added only if the existing implementation don't cover the concept.
 - Modification of existing packages or additional of new packages should have accompanying working tests.
-- The code should be self explanatory (Comments should only be used where necessary).
+- The code should be self explanatory (use comments if necessary).
 
 ## Caution
 **This work should not be taken as a library where you can import implementations of data structures and algorithms.**
@@ -54,4 +54,4 @@ This work should be a learning path for one to practise implementations of vario
 - [https://www.programiz.com/dsa](https://www.programiz.com/dsa)
 - [https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 - [https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial] (https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial)
-- [https://www.geeksforgeeks.org/fundamentals-of-algorithms/](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)zz
+- [https://www.geeksforgeeks.org/fundamentals-of-algorithms/](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)

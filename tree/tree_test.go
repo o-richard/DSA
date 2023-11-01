@@ -66,7 +66,7 @@ func TestBST(t *testing.T) {
 				t.Errorf("expected %v while performing %v tranverse type, actual result is %v", test.expectedNums, test.order, actual)
 			}
 			if err != nil {
-				t.Errorf("unexpected an error for %v tranverse type", test.order)
+				t.Errorf("an error was unexpected for %v tranverse type", test.order)
 			}
         })
     }
@@ -133,7 +133,7 @@ func TestAVL(t *testing.T) {
 				t.Errorf("expected %v while performing %v tranverse type, actual result is %v", test.expectedNums, test.order, actual)
 			}
 			if err != nil {
-				t.Errorf("unexpected an error for %v tranverse type", test.order)
+				t.Errorf("an error was unexpected for %v tranverse type", test.order)
 			}
         })
     }	
