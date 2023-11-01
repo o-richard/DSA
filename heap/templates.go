@@ -28,7 +28,7 @@ func (f *fHeap) ExtractRootFHeap() (int, error) {
 	// Edit here
 }
 
-func (f *fHeap) ChangeKey(currentData, newData int) (error) {
+func (f *fHeap) ChangeKey(currentData, newData int) error {
 	// Edit here
 }
 

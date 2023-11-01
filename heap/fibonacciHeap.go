@@ -41,6 +41,7 @@ func (f *fHeap) InsertFHeap(inputData int) {
 		newNode.leftNode = f.rootNode.leftNode
 		f.rootNode.leftNode = &newNode
 
+		// Update the root node if necessary
 		if f.isMaxHeap {
 			if newNode.data > f.rootNode.data {
 				f.rootNode = &newNode
@@ -75,6 +76,7 @@ func (f *fHeap) UnionFHeap(newFHeap *fHeap) error {
 	newFHeap.rootNode.leftNode = f.rootNode.leftNode
 	f.rootNode.leftNode = newFHeap.rootNode
 
+	// Update the root node of the main heap if necessary
 	if f.isMaxHeap {
 		if newFHeap.rootNode.data > f.rootNode.data {
 			f.rootNode = newFHeap.rootNode
@@ -148,6 +150,7 @@ func consolidate(f *fHeap) {
 	}
 
 	f.rootNode = nil
+	// Come up with a new root node
 	for _, tmp := range arr {
 		if tmp != nil {
 			if f.rootNode == nil {
@@ -267,7 +270,7 @@ func cascadingCut(f *fHeap, parent *fHeapNode) {
 	}
 }
 
-func (f *fHeap) ChangeKey(currentData, newData int) (error) {
+func (f *fHeap) ChangeKey(currentData, newData int) error {
 	if f.rootNode == nil {
 		return errors.New("the heap is empty")
 	}
@@ -312,6 +315,6 @@ func (f *fHeap) DeleteNode(currentData int) error {
 	if err != nil {
 		return err
 	}
-	_, _ = f.ExtractRootFHeap()
+	f.ExtractRootFHeap()
 	return nil
 }

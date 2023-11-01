@@ -1,3 +1,15 @@
+# Kosaraju's Algorithm Explanation
+
+Kosaraju's Algorithm is used to find Strongly Connected Components in a directed graph.
+
+# Kosaraju's Algorithm Implementation
+
+
+
+# Example
+# Applications
+# Tests
+
 ```go
 import "github.com/o-richard/DSA/kosaraju"
                         .

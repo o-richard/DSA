@@ -57,9 +57,9 @@ func (g *graph) dfs(vertex string, visitedVertices map[string]bool, sample []str
 }
 
 func (g *graph) SCC() [][]string {
-	var stack []string
 	visitedVertices := make(map[string]bool)
-
+	
+	var stack []string
 	for _, v := range g.uniqueVertices {
 		if !visitedVertices[v] {
 			g.fillOrder(v, visitedVertices, &stack)

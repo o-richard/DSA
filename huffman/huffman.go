@@ -80,20 +80,26 @@ func tranverse(node *node, code string, huffmanCode map[string]string) {
 
 
 func Huffman(input string) map[string]string {
+	// Obtain the frequency of each character in the string
 	characterFrequency := make(map[rune]int)
 	for _, v := range input {
 		characterFrequency[v] = characterFrequency[v] + 1
 	}
 
 	priorityQueue := initMinHeap()
+	// Store the characters in an increasing order of frequency
 	for symbol, frequency := range characterFrequency {
 		priorityQueue.insert(frequency, symbol, nil, nil)
 	}
 
+	// Only one item should remain in the priority queue
 	for priorityQueue.itemCount > 1 {
 		leftChild := priorityQueue.delete()
 		rightChild := priorityQueue.delete()
-
+		// Add a new node whose
+		// leftChild is the minimum frequency
+		// rightChild is the second minimum frequency
+		// data is the sum of the frequency of the left and right child
 		priorityQueue.insert(
 			leftChild.frequency + rightChild.frequency,
 			0,
@@ -101,8 +107,11 @@ func Huffman(input string) map[string]string {
 			&rightChild,
 		)
 	}
+
 	huffmanCode := make(map[string]string)
 	rootNode := priorityQueue.delete()
+	// Tranverse the remaining node in the priority queue
+	// In such a way the left edge gets 0 while the right one gets 1
 	tranverse(&rootNode, "", huffmanCode)
 	return huffmanCode
 }
