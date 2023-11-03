@@ -3,7 +3,11 @@ package queue
 import "errors"
 
 type circularQueue struct {
-	queue
+	front int
+	rear int
+	itemCount int
+	maxSize int
+	values []interface{}
 }
 
 func InitCircularQueue(size int) (circularQueue, error) {

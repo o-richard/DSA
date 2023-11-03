@@ -3,7 +3,11 @@ package queue
 import "errors"
 
 type doubleEndedQueue struct {
-	queue
+	front int
+	rear int
+	itemCount int
+	maxSize int
+	values []interface{}
 }
 
 func InitDoubleEndedQueue(size int) (doubleEndedQueue, error) {

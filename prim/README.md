@@ -1,3 +1,17 @@
+# Prim's Algorithm Explanation
+
+Prim's Algorithm is used to find the minimum spanning tree in a graph (A subset of the edges of graph that connects all the vertices with the minimum possible edge weight without forming any cycle).
+
+# Prim's Algorithm Implementation
+
+Imagine you have a map of cities and you want to build a road network to connect cities while minimizing length.
+
+1. Randomly select a single city as your starting point
+2. Identify a city connected to your chosen city with the shortest road distance and it is not yet chosen
+3. Continue the selction for the different cities and roads
+
+# Example
+
 ```go
 "github.com/o-richard/DSA/prim"
                 .
@@ -53,3 +67,12 @@ graph := map[string]map[string]int {
 }
 fmt.Println(prim.Prim(graph))
 ```
+
+# Applications
+
+- Find the minimum spanning tree
+- Network design
+- Electrical wiring
+
+# Tests
+

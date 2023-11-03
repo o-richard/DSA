@@ -2,9 +2,9 @@ package prim
 
 import "slices"
 
-type edge struct {
-	source, destination string
-	weight int
+type Edge struct {
+	Source, Destination string
+	Weight int
 }
 
 type node struct {
@@ -68,7 +68,7 @@ func (h *minHeap) isEmpty() bool {
 	return h.itemCount == 0
 }
 
-func Prim(graph map[string]map[string]int) ([]edge, int) {
+func Prim(graph map[string]map[string]int) ([]Edge, int) {
 	var uniqueVertices []string
 	for key, values := range graph {
 		if !slices.Contains(uniqueVertices, key) {
@@ -82,7 +82,7 @@ func Prim(graph map[string]map[string]int) ([]edge, int) {
 	}
 
 	var minCost int
-	var result []edge
+	var result []Edge
 	
 	if len(uniqueVertices) == 0 {
 		return result, minCost
@@ -102,7 +102,7 @@ func Prim(graph map[string]map[string]int) ([]edge, int) {
 		minCost += minNode.data
 		visited[minNode.destination] = true
 
-		newEdge := edge{source: minNode.source, destination: minNode.destination, weight: minNode.data}
+		newEdge := Edge{Source: minNode.source, Destination: minNode.destination, Weight: minNode.data}
 		result = append(result, newEdge)
 
 		for k, v := range graph[minNode.destination] {
