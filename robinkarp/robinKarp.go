@@ -15,7 +15,7 @@ func Robinkarp(text, pattern string) []int {
 	multiplier := 256
 	mod := 101
 
-	// SHould match (multiplier ^ (patternLength - 1) % mod)
+	// Should match (multiplier ^ (patternLength - 1) % mod)
 	maxHashConst := 1
 	for i := 0; i < patternLength - 1; i++ {
 		maxHashConst = (maxHashConst * multiplier) % mod

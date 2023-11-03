@@ -27,7 +27,7 @@ This repository is not extensive to cover everything on data structures and algo
 For example, some data structures are not implemented:
 
 1. **Arrays** - Most languages have their own implementations of arrays. The underlying concept should be understood on how they work, their benefits, resizing concepts etc.
-2. **Hashmaps** - Most langauages have their own implemenation of a hash map where a certain unique key maps to a particular value. The underlying concept should be understood on how they work, various hash functions, dealing with hash collisions, benefits etc.
+2. **Hashmaps** - Most langauages have their own implemenation of a hash map where a certain unique key maps to a particular value. The underlying concept should be understood on how they work, various hash functions, dealing with hash collisions, benefits etc. **Some concepts on hash functions are covered in [Rabin-Karp Algorithm](robinkarp/README.md)**
 
 ## Tests
 
