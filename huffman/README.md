@@ -26,6 +26,7 @@ Decoding characters
                     .
                     .
                     .
+// Obtain the symbols present and their respective codes
 fmt.Println(huffman.Huffman("BCAADDDCCACACAC"))
 ```
 

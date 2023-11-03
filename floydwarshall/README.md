@@ -20,6 +20,7 @@ graph[0] = []uint{0, 3, math.MaxInt, 5}
 graph[1] = []uint{2, 0, math.MaxInt, 4}
 graph[2] = []uint{math.MaxInt, 1, 0, math.MaxInt}
 graph[3] = []uint{math.MaxInt, math.MaxInt,2, 0}
+// Returns a graph with the shortes distances included
 fmt.Println(floydwarshall.FloydWarshall(graph, 4))
 ```
 

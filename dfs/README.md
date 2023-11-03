@@ -23,6 +23,7 @@ graph["1"] = []string {"0", "2"}
 graph["2"] = []string {"0", "1", "4"}
 graph["3"] = []string {"0"}
 graph["4"] = []string {"2"}
+// Returns an array of vertices explored through Depth First Search
 fmt.Println(dfs.DFS(graph, "0"))
 ```
 

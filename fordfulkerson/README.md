@@ -41,6 +41,7 @@ graph := map[string]map[string]int {
         "T": 5,
     },
 }
+// Returns the maximum flow in the network
 fmt.Println(fordfulkerson.FordFulkerson(graph, "S", "T"))
 ```
 

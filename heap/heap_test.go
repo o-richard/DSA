@@ -183,3 +183,25 @@ func TestFHeap_DeleteNode(t *testing.T) {
 		})
 	}
 }
+
+func TestFHeap_UnionFibonacciHeap(t *testing.T) {
+	fheap := heap.InitFHeap(false)
+	fheap.InsertFHeap(3)
+	fheap.InsertFHeap(2)
+	fheap.InsertFHeap(1)
+
+	fheap2 := heap.InitFHeap(false)
+	fheap2.InsertFHeap(6)
+	fheap2.InsertFHeap(7)
+	fheap2.InsertFHeap(8)
+
+	fheap.UnionFHeap(&fheap2)
+
+	data := []int{6, 7, 8, 3, 1, 2}
+	for _, currentData := range data {
+		err := fheap.DeleteNode(currentData)
+		if err != nil {
+			t.Errorf("expected no error since the item is present in the fibonacci heap. There is an error likely during the union of two fibonacci heaps")
+		}
+	}
+}

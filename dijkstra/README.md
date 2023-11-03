@@ -56,6 +56,7 @@ graph := map[string]map[string]int {
         "E": 6,
     },
 }
+// Returns the destinations and the respective distances
 fmt.Println(dijkstra.Dijkstra(graph, "A"))
 ```
 

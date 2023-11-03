@@ -4,14 +4,14 @@ import (
 	"slices"
 )
 
-type edge struct {
-	source, destination string
-	weight int
+type Edge struct {
+	Source, Destination string
+	Weight int
 }
 
 type graph struct {
     uniqueVertices []string
-	edges []edge
+	edges []Edge
 }
 
 func InitGraph() graph {
@@ -26,7 +26,7 @@ func (g *graph) AddEdge(source, destination string, weight int) {
         g.uniqueVertices = append(g.uniqueVertices, destination)
     }
 
-	newEdge := edge{source: source, destination: destination, weight: weight}
+	newEdge := Edge{Source: source, Destination: destination, Weight: weight}
 	g.edges = append(g.edges, newEdge)
 }
 
@@ -53,17 +53,20 @@ func union(childParentRelation map[string]string, nodeRankRelation map[string]in
     }
 }
 
-func (g *graph) Kruskal() ([]edge, int) {
-    var result []edge
+func (g *graph) Kruskal() ([]Edge, int) {
+    var result []Edge
     var minCost int
+    
     // Keep track of the indices in the original sorted edges and the result edges
     var indexOriginalEdges, indexResultEdges int
 
-    slices.SortStableFunc(g.edges, func(a, b edge) int {
-        return a.weight - b.weight
+    // Sort all edges from the lowest weight to the highest
+    slices.SortStableFunc(g.edges, func(a, b Edge) int {
+        return a.Weight - b.Weight
     })
 
     verticesCount := len(g.uniqueVertices)
+    // Keep track of the child and parent. Key (Child). Value (Parent)
     childParentRelation := make(map[string]string)
     for _, v := range g.uniqueVertices {
         childParentRelation[v] = v
@@ -71,16 +74,17 @@ func (g *graph) Kruskal() ([]edge, int) {
     nodeRankRelation := make(map[string]int)
 
     for indexResultEdges < verticesCount - 1 {
+        // Obtain the edge with the least weight
         minEdge := g.edges[indexOriginalEdges]
         indexOriginalEdges++
 
-        sourceParent := find(childParentRelation, minEdge.source)
-        destinationParent := find(childParentRelation, minEdge.destination)
+        sourceParent := find(childParentRelation, minEdge.Source)
+        destinationParent := find(childParentRelation, minEdge.Destination)
 
         if sourceParent != destinationParent {
             indexResultEdges++
             result = append(result, minEdge)
-            minCost += minEdge.weight
+            minCost += minEdge.Weight
             union(childParentRelation, nodeRankRelation, sourceParent, destinationParent)
         }
 

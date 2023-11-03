@@ -37,6 +37,7 @@ graph.AddEdge("B", "E", 4)
 graph.AddEdge("C", "E", 5)
 graph.AddEdge("C", "D", 3)
 graph.AddEdge("E", "D", -5)
+// Returns the destinations and the respective distances
 fmt.Println(graph.BellmanFord("A"))
 
 ```

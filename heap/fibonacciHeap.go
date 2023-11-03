@@ -70,10 +70,10 @@ func (f *fHeap) UnionFHeap(newFHeap *fHeap) error {
 		return errors.New("the two heaps should be on different blocks of memory")
 	}
 
-	// Insert to the left of the root node of current heap
-	f.rootNode.leftNode.rightNode = newFHeap.rootNode
+	// Concaneting the root lists by inserting to the right of the main root list
+	newFHeap.rootNode.rightNode.leftNode = f.rootNode.leftNode
+	f.rootNode.leftNode.rightNode = newFHeap.rootNode.rightNode
 	newFHeap.rootNode.rightNode = f.rootNode
-	newFHeap.rootNode.leftNode = f.rootNode.leftNode
 	f.rootNode.leftNode = newFHeap.rootNode
 
 	// Update the root node of the main heap if necessary
