@@ -1,6 +1,7 @@
 package heap_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/o-richard/DSA/heap"
@@ -77,33 +78,33 @@ func TestFHeap_ExtractRootFHeap(t *testing.T) {
 		fheap.InsertFHeap(v)
 	}
 
-	tests := map[string]struct {
+	tests := []struct {
 		expectedRoot    int
 		expectedSuccess bool
 	}{
-		"Test 1": {
+		{
 			expectedRoot:    1,
 			expectedSuccess: true,
 		},
-		"Test 2": {
+		{
 			expectedRoot:    3,
 			expectedSuccess: true,
 		},
-		"Test 3": {
+		{
 			expectedRoot:    6,
 			expectedSuccess: true,
 		},
-		"Test 4": {
+		{
 			expectedRoot:    8,
 			expectedSuccess: true,
 		},
-		"Test 5": {
+		{
 			expectedRoot: 0,
 		},
 	}
 
-	for name, test := range tests {
-		t.Run(name, func(t *testing.T) {
+	for i, test := range tests {
+		t.Run(fmt.Sprintf("Test %v", i), func(t *testing.T) {
 			actualRoot, err := fheap.ExtractRootFHeap()
 			if test.expectedSuccess && actualRoot != test.expectedRoot {
 				t.Errorf("expected %v but got %v for the input %v", test.expectedRoot, actualRoot, data)
@@ -158,21 +159,21 @@ func TestFHeap_DeleteNode(t *testing.T) {
 		fheap.InsertFHeap(v)
 	}
 
-	tests := map[string]struct {
+	tests := []struct {
 		currentData     int
 		expectedSuccess bool
 	}{
-		"Test 1": {
+		{
 			currentData:     6,
 			expectedSuccess: true,
 		},
-		"Test 2": {
+		{
 			currentData: 9,
 		},
 	}
 
-	for name, test := range tests {
-		t.Run(name, func(t *testing.T) {
+	for i, test := range tests {
+		t.Run(fmt.Sprintf("Test %v", i), func(t *testing.T) {
 			err := fheap.DeleteNode(test.currentData)
 			if test.expectedSuccess && err != nil {
 				t.Errorf("expected no error since the item is present in the fibonacci heap")

@@ -20,35 +20,35 @@ func TestInsertion(t *testing.T) {
 		"Circular Double Linked List": &cdll,
 	}
 
-	tests := map[string]struct {
+	tests := []struct {
 		insertionIndex  int
 		inputData       int
 		expectedSuccess bool
 	}{
-		"Test 1": {
+		{
 			insertionIndex:  0,
 			inputData:       1,
 			expectedSuccess: true,
 		},
-		"Test 2": {
+		{
 			insertionIndex:  -1,
 			inputData:       2,
 			expectedSuccess: true,
 		},
-		"Test 3": {
+		{
 			insertionIndex:  1,
 			inputData:       3,
 			expectedSuccess: true,
 		},
-		"Test 4": {
+		{
 			insertionIndex: -7,
 			inputData:      4,
 		},
 	}
 
 	for llName, llType := range ll {
-		for name, test := range tests {
-			t.Run(name, func(t *testing.T) {
+		for i, test := range tests {
+			t.Run(fmt.Sprintf("Test %v", i), func(t *testing.T) {
 				err := linkedlist.Insertion(llType, test.inputData, test.insertionIndex)
 				if test.expectedSuccess && err != nil {
 					t.Errorf("%v: expected no error during insertion since provided indices are in the range of the current data in the linked list", llName)

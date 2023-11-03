@@ -61,7 +61,7 @@ func TestPrim(t *testing.T) {
 			"E": 2,
 		},
 		"D": {
-			"F": 3,
+			"F": 9,
 			"C": 3,
 		},
 		"E": {
@@ -70,7 +70,7 @@ func TestPrim(t *testing.T) {
 		},
 		"F": {
 			"E": 3,
-			"D": 3,
+			"D": 9,
 			"C": 4,
 		},
 	}

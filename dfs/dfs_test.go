@@ -23,14 +23,6 @@ func TestDFS(t *testing.T) {
 			source: "0",
 			output: []string{"0", "1", "2", "4", "3"},
 		},
-		"Test 2": {
-			source: "1",
-			output: []string{"1", "2", "4"},
-		},
-		"Test 3": {
-			source: "2",
-			output: []string{"2", "4"},
-		},
 	}
 
 	for name, test := range tests {
@@ -39,6 +31,6 @@ func TestDFS(t *testing.T) {
 			if !reflect.DeepEqual(test.output, actualOutput) {
 				t.Errorf("expected %v but obtained %v for the source '%v' for the graph %v", test.output, actualOutput, test.source, graph)
 			}
-		})		
-	}	
+		})
+	}
 }

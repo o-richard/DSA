@@ -1,6 +1,7 @@
 package dijkstra_test
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/o-richard/DSA/dijkstra"
@@ -51,9 +52,7 @@ func TestDijkstra(t *testing.T) {
 	}
 	actualOutput := dijkstra.Dijkstra(graph, source)
 
-	for k, distance := range expectedOutput {
-		if actualOutput[k] != distance {
-			t.Errorf("expected the distance from the source '%v' to the destination '%v' to be %v", source, k, distance)
-		}
+	if !reflect.DeepEqual(expectedOutput, actualOutput) {
+		t.Errorf("expected the answer %v but got %v", expectedOutput, actualOutput)
 	}
 }

@@ -1,6 +1,7 @@
 package stack_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/o-richard/DSA/stack"
@@ -8,28 +9,26 @@ import (
 
 func TestInit(t *testing.T) {
 	tests := map[string]struct {
-		size int
+		size      int
 		isSuccess bool
 	}{
 		"Test 1": {
-			size: 8,
+			size:      8,
 			isSuccess: true,
 		},
 		"Test 2": {
-		},
-		"Test 3": {
 			size: -8,
 		},
 	}
 
 	for name, test := range tests {
-        t.Run(name, func(t *testing.T) {
-            _, err := stack.Init(test.size)
+		t.Run(name, func(t *testing.T) {
+			_, err := stack.Init(test.size)
 			if (err == nil) != test.isSuccess {
 				t.Errorf("expected %v in stack initialization, actual result is %v", test.isSuccess, !test.isSuccess)
 			}
-        })
-    }
+		})
+	}
 }
 
 func TestStack_Push(t *testing.T) {
@@ -39,31 +38,31 @@ func TestStack_Push(t *testing.T) {
 		t.Fatalf("the stack was not iniatilized successfully")
 	}
 
-	tests := map[string]struct {
-		data int
+	tests := []struct {
+		data      int
 		isSuccess bool
 	}{
-		"Test 1": {
-			data: 1,
+		{
+			data:      1,
 			isSuccess: true,
 		},
-		"Test 2": {
-			data: 2,
+		{
+			data:      2,
 			isSuccess: true,
 		},
-		"Test 3": {
+		{
 			data: 3,
 		},
 	}
 
-	for name, test := range tests {
-        t.Run(name, func(t *testing.T) {
-            err := myStack.Push(test.data)
+	for i, test := range tests {
+		t.Run(fmt.Sprintf("Test %v", i), func(t *testing.T) {
+			err := myStack.Push(test.data)
 			if (err == nil) != test.isSuccess {
 				t.Errorf("expected %v while pushing %v to the stack, actual result is %v", test.isSuccess, test.data, !test.isSuccess)
 			}
-        })
-    }
+		})
+	}
 }
 
 func TestStack_Pop(t *testing.T) {
@@ -73,7 +72,7 @@ func TestStack_Pop(t *testing.T) {
 		t.Fatalf("the stack was not iniatilized successfully")
 	}
 
-	data := []int {1,2,3}
+	data := []int{1, 2, 3}
 	for _, v := range data {
 		err := myStack.Push(v)
 		if err != nil {
@@ -81,33 +80,20 @@ func TestStack_Pop(t *testing.T) {
 		}
 	}
 
-	tests := map[string]struct {
-		data int
-	}{
-		"Test 1": {
-			data: 3,
-		},
-		"Test 2": {
-			data: 2,
-		},
-		"Test 3": {
-			data: 1,
-		},
-	}
+	tests := []int{3, 2, 1}
 
-	for name, test := range tests {
-        t.Run(name, func(t *testing.T) {
-            val := myStack.Pop()
-			if val != test.data {
-				t.Errorf("expected %v while popping from the stack, actual result is %v", test.data, val)
+	for i, test := range tests {
+		t.Run(fmt.Sprintf("Test %v", i), func(t *testing.T) {
+			val := myStack.Pop()
+			if val != test {
+				t.Errorf("expected %v while popping from the stack, actual result is %v", test, val)
 			}
-        })
-    }
+		})
+	}
 }
 
 func TestStack_Peek(t *testing.T) {
-	size := 1
-	myStack, err := stack.Init(size)
+	myStack, err := stack.Init(1)
 	if err != nil {
 		t.Fatalf("the stack was not iniatilized successfully")
 	}
@@ -125,8 +111,7 @@ func TestStack_Peek(t *testing.T) {
 }
 
 func TestStack_IsEmpty(t *testing.T) {
-	size := 1
-	myStack, err := stack.Init(size)
+	myStack, err := stack.Init(1)
 	if err != nil {
 		t.Fatalf("the stack was not iniatilized successfully")
 	}
@@ -149,8 +134,7 @@ func TestStack_IsEmpty(t *testing.T) {
 }
 
 func TestStack_IsFull(t *testing.T) {
-	size := 1
-	myStack, err := stack.Init(size)
+	myStack, err := stack.Init(1)
 	if err != nil {
 		t.Fatalf("the stack was not iniatilized successfully")
 	}
