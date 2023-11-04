@@ -1,8 +1,7 @@
 package prim
 
 var Templates = map[string]string{
-	"prim": `
-package prim
+	"prim": `package prim
 
 type Edge struct {
 	Source, Destination string

@@ -1,8 +1,7 @@
 package linkedlist
 
 var Templates = map[string]string{
-	"singleLinkedList": `
-package linkedlist
+	"singleLinkedList": `package linkedlist
 
 type sLL struct {
 	// Edit here
@@ -28,8 +27,7 @@ func (s *sLL) retrieval(retrievalIndex int, isDelete bool) (int, error) {
 	// Edit here
 }	
 	`,
-	"doubleLinkedList": `
-package linkedlist
+	"doubleLinkedList": `package linkedlist
 
 type dLL struct {
 	// Edit here
@@ -55,8 +53,7 @@ func (d *dLL) retrieval(retrievalIndex int, isDelete bool) (int, error) {
 	// Edit here
 }
 	`,
-	"circularSingleLinkedList": `
-package linkedlist
+	"circularSingleLinkedList": `package linkedlist
 
 type cSLL struct {
 	// Edit here
@@ -82,8 +79,7 @@ func (c *cSLL) retrieval(retrievalIndex int, isDelete bool) (int, error) {
 	// Edit here
 }
 	`,
-	"circularDoubleLinkedList": `
-package linkedlist
+	"circularDoubleLinkedList": `package linkedlist
 
 type cDLL struct {
 	// Edit here

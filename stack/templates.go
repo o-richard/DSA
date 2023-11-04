@@ -1,8 +1,7 @@
 package stack
 
 var Templates = map[string]string{
-	"stack": `
-package stack
+	"stack": `package stack
 
 type stack struct {
 	// Edit here

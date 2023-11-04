@@ -1,64 +1,55 @@
 package sort
 
 var Templates = map[string]string{
-	"bubbleSort": `
-package sort
+	"bubbleSort": `package sort
 
 func BubbleSort(nums []int, isAsc bool) []int {
 	// Edit here
 }
 	`,
-	"countingSort": `
-package sort
+	"countingSort": `package sort
 
 func CountingSort(nums []int) ([]int, error) {
 	// Edit here
 }
 	`,
-	"heapSort" : `
-package sort
+	"heapSort" : `package sort
 
 func HeapSort(nums []int, isAsc bool) []int {
 	// Edit here
 } 	
 	`,
-	"insertionSort": `
-package sort
+	"insertionSort": `package sort
 
 func InsertionSort(nums []int, isAsc bool) []int {
 	// Edit here
 }	
 	`,
-	"mergeSort": `
-package sort
+	"mergeSort": `package sort
 
 func MergeSort(nums []int, isAsc bool) []int {
 	// Edit here
 }
 	`,
-	"quickSort": `
-package sort
+	"quickSort": `package sort
 
 func QuickSort(nums []int, isAsc bool) []int {
 	// Edit here
 }
 	`,
-	"radixSort": `
-package sort
+	"radixSort": `package sort
 
 func RadixSort(nums []int) ([]int, error) {
 	// Edit here
 }	
 	`,
-	"selectionSort": `
-package sort
+	"selectionSort": `package sort
 
 func SelectionSort(nums []int, isAsc bool) []int {
 	// Edit here
 }	
 	`,
-	"shellSort": `
-package sort
+	"shellSort": `package sort
 
 func ShellSort(nums []int, isAsc bool) []int {
 	// Edit here

@@ -7,6 +7,33 @@
 ## Usage
 There is no structured learning path to use; once to wish to tackle a package - tackle it extensively.
 
+```bash
+# Build
+go build
+
+# Testing
+# 1. A specific package
+go test ./PACKAGE_NAME
+# 2. The whole project
+go test ./...
+
+# Generate Templates
+# 1. The whole project
+<EXECUTABLE_FILE> -command=generate -directory=.
+# 2. Specific directories
+<EXECUTABLE_FILE> -command=generate -directory=bfs,dfs
+# 3. A specific file
+<EXECUTABLE_FILE> -command=generate -directory=bfs -file=bfs.go
+
+# Restore Solutions
+# 1. The whole project
+<EXECUTABLE_FILE> -command=restore -directory=.
+# 2. Specific directories
+<EXECUTABLE_FILE> -command=restore -directory=bfs,dfs
+# 3. A specific file
+<EXECUTABLE_FILE> -command=restore -directory=bfs -file=bfs.go
+```
+
 ### Recommedations
 ~~Develop a personal guide to use~~ Strictly stick to a personal guide you'll choose (Objetives vary, timelines to accomplish stuff vary, personalities differ).
 
@@ -18,7 +45,7 @@ There is no structured learning path to use; once to wish to tackle a package - 
 I find Go to be elegant (coming from the world of C, Python and Javascript).
 
 ### Recommendations
-Implement data structures and algorithms in the C programming language if possible. (Gotta love the segfaults first and dealing with raw memory with no leaks😂).
+Implement data structures and algorithms in the C programming language if possible. (Gotta love the segfaults and dealing with raw memory with no leaks).
 
 ## Unimplemented Concepts
 
@@ -42,7 +69,6 @@ Contributions are welcome.
 Suggestions:
 - New packages should be added only if the existing implementation don't cover the concept.
 - Modification of existing packages or additional of new packages should have accompanying working tests.
-- The code should be self explanatory (use comments if necessary).
 
 ## Caution
 **This work should not be taken as a library where you can import implementations of data structures and algorithms.**
@@ -53,5 +79,5 @@ This work should be a learning path for one to practise implementations of vario
 - [https://www.scaler.com/topics/data-structures/](https://www.scaler.com/topics/data-structures/)
 - [https://www.programiz.com/dsa](https://www.programiz.com/dsa)
 - [https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
-- [https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial] (https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial)
+- [https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial](https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial)
 - [https://www.geeksforgeeks.org/fundamentals-of-algorithms/](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)

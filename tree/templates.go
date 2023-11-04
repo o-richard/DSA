@@ -1,8 +1,7 @@
 package tree
 
 var Templates = map[string]string{
-	"AVL": `
-package tree
+	"AVL": `package tree
 
 type avl struct {
 	// Edit here
@@ -44,8 +43,7 @@ func (a *avl) isBalanced() bool {
 	// Edit here	
 }	
 	`,
-	"BST": `
-package tree
+	"BST": `package tree
 
 type bst struct {
 	// Edit here

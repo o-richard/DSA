@@ -1,8 +1,7 @@
 package kosaraju
 
 var Templates = map[string]string{
-	"kosaraju": `
-package kosaraju
+	"kosaraju": `package kosaraju
 
 type graph struct {
 	// Edit here

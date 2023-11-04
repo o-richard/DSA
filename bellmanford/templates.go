@@ -2,8 +2,7 @@ package bellmanford
 
 
 var Templates = map[string]string {
-	"bellmanFord": `
-package bellmanford
+	"bellmanFord": `package bellmanford
 
 type graph struct {
 	// Edit Here

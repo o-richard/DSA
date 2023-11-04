@@ -1,8 +1,7 @@
 package heap
 
 var Templates = map[string]string{
-	"fibonacciHeap": `
-package heap
+	"fibonacciHeap": `package heap
 
 type fHeap struct {
 	// Edit here

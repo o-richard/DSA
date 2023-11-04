@@ -1,8 +1,7 @@
 package queue
 
 var Templates = map[string]string{
-	"circularQueue": `
-package queue
+	"circularQueue": `package queue
 
 type circularQueue struct {
 	// Edit here
@@ -32,8 +31,7 @@ func (c *circularQueue) IsFull() bool {
 	// Edit here
 }
 	`,
-	"doubleEndedQueue": `
-package queue
+	"doubleEndedQueue": `package queue
 
 type doubleEndedQueue struct {
 	// Edit here
@@ -67,8 +65,7 @@ func (d *doubleEndedQueue) IsFull() bool {
 	// Edit here
 }
 	`,
-	"priorityQueue": `
-package queue
+	"priorityQueue": `package queue
 
 type priorityQueue struct {
 	// Edit here

@@ -1,8 +1,7 @@
 package kruskal
 
 var Templates = map[string]string{
-	"kruskal": `
-package kruskal
+	"kruskal": `package kruskal
 
 type Edge struct {
 	Source, Destination string
